@@ -1,1 +1,3 @@
-console.log("Hello, World!");
+const data = document.querySelector("#data");
+
+data.innerHTML = "Hello from JavaScript!";
