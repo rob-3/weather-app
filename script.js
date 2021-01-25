@@ -10,7 +10,6 @@ button.addEventListener("click", onClick);
 
 function onClick() {
   const input = searchbox.value;
-  console.log("You typed: " + input);
 
   // Making a request
   fetch(searchURL + input)
@@ -22,9 +21,10 @@ function onClick() {
         .then(weatherData => {
           // Get today's data
           const weatherToday = weatherData.consolidated_weather[0];
-          console.log("Weather: " + weatherToday.weather_state_name);
-          console.log("High: " + weatherToday.max_temp);
-          console.log("Low: " + weatherToday.min_temp);
+          data.innerHTML = 
+            `Weather: ${weatherToday.weather_state_name}<br>
+             High: ${weatherToday.max_temp}<br>
+             Low: ${weatherToday.min_temp}`;
         });
     });
 }
