@@ -17,6 +17,8 @@ function onClick() {
     .then(blob => blob.json())
     .then(data => {
       const woeid = data[0].woeid;
-      console.log(woeid);
+      fetch(woeidURL + woeid)
+        .then(blob => blob.json())
+        .then(data => console.log(data));
     });
 }
