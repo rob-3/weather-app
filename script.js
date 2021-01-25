@@ -19,6 +19,12 @@ function onClick() {
       const woeid = data[0].woeid;
       fetch(woeidURL + woeid)
         .then(blob => blob.json())
-        .then(data => console.log(data));
+        .then(data => {
+          // Get today's data
+          const weatherToday = data.consolidated_weather[0];
+          console.log("Weather: " + weatherToday.weather_state_name);
+          console.log("High: " + weatherToday.max_temp);
+          console.log("Low: " + weatherToday.min_temp);
+        });
     });
 }
