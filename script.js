@@ -4,6 +4,7 @@ const searchbox = document.querySelector("#search");
 
 const proxy = "https://cors-anywhere.herokuapp.com/";
 const searchURL = proxy + "https://www.metaweather.com/api/location/search/?query=";
+const woeidURL = proxy + "https://www.metaweather.com/api/location/";
 
 button.addEventListener("click", onClick);
 
@@ -14,5 +15,8 @@ function onClick() {
   // Making a request
   fetch(searchURL + input)
     .then(blob => blob.json())
-    .then(data => console.log(data));
+    .then(data => {
+      const woeid = data[0].woeid;
+      console.log(woeid);
+    });
 }
