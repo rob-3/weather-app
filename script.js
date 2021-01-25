@@ -15,13 +15,13 @@ function onClick() {
   // Making a request
   fetch(searchURL + input)
     .then(blob => blob.json())
-    .then(data => {
-      const woeid = data[0].woeid;
+    .then(results => {
+      const woeid = results[0].woeid;
       fetch(woeidURL + woeid)
         .then(blob => blob.json())
-        .then(data => {
+        .then(weatherData => {
           // Get today's data
-          const weatherToday = data.consolidated_weather[0];
+          const weatherToday = weatherData.consolidated_weather[0];
           console.log("Weather: " + weatherToday.weather_state_name);
           console.log("High: " + weatherToday.max_temp);
           console.log("Low: " + weatherToday.min_temp);
