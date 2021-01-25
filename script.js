@@ -12,7 +12,7 @@ function onClick() {
   console.log("You typed: " + input);
 
   // Making a request
-  const promise = fetch(searchURL + input);
-
-  promise.then(blob => blob.json()).then(data => console.log(data));
+  fetch(searchURL + input)
+    .then(blob => blob.json())
+    .then(data => console.log(data));
 }
