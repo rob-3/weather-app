@@ -1,0 +1,26 @@
+* {
+  text-align: center;
+}
+
+body {
+  background-color: #68ddfd;
+}
+
+button {
+  font-size: inherit;
+  background-color: #01637e;
+  border: none;
+  color: white;
+  padding: .15em .3em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+input {
+  font-size: inherit;
+}
+
+.searchbar {
+  font-size: 2em;
+}
