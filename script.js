@@ -7,6 +7,11 @@ const searchURL = proxy + "https://www.metaweather.com/api/location/search/?quer
 const woeidURL = proxy + "https://www.metaweather.com/api/location/";
 
 button.addEventListener("click", onClick);
+searchbox.addEventListener("keydown", event => {
+  if (event.key === "Enter") {
+    onClick();
+  }
+});
 
 function onClick() {
   const input = searchbox.value;
