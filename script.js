@@ -33,8 +33,8 @@ function onClick() {
           const weatherToday = weatherData.consolidated_weather[0];
           data.innerHTML = 
             `Weather: ${weatherToday.weather_state_name}<br>
-             High: ${toFarenheit(weatherToday.max_temp)}<br>
-             Low: ${toFarenheit(weatherToday.min_temp)}`;
+             High: ${toFarenheit(weatherToday.max_temp)}°F<br>
+             Low: ${toFarenheit(weatherToday.min_temp)}°F`;
         });
     })
     .catch(err => {
@@ -44,5 +44,5 @@ function onClick() {
 }
 
 function toFarenheit(celcius) {
-  return celcius * (9/5) + 32;
+  return Math.round(celcius * (9/5) + 32);
 }
