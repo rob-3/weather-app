@@ -17,6 +17,13 @@ input {
   font-size: inherit;
 }
 
+p {
+  font-size: 3em;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .searchbar {
   font-size: 2em;
   width: max-content;
