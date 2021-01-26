@@ -10,6 +10,11 @@ button.addEventListener("click", onClick);
 
 function onClick() {
   const input = searchbox.value;
+  // Clear value
+  searchbox.value = "";
+
+  // Loading indicator
+  data.innerHTML = "Loading...";
 
   // Making a request
   fetch(searchURL + input)
