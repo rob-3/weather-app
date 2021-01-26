@@ -23,8 +23,12 @@ function onClick() {
           const weatherToday = weatherData.consolidated_weather[0];
           data.innerHTML = 
             `Weather: ${weatherToday.weather_state_name}<br>
-             High: ${weatherToday.max_temp}<br>
-             Low: ${weatherToday.min_temp}`;
+             High: ${toFarenheit(weatherToday.max_temp)}<br>
+             Low: ${toFarenheit(weatherToday.min_temp)}`;
         });
     });
+}
+
+function toFarenheit(celcius) {
+  return celcius * (9/5) + 32;
 }
