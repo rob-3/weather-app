@@ -31,6 +31,10 @@ function onClick() {
              High: ${toFarenheit(weatherToday.max_temp)}<br>
              Low: ${toFarenheit(weatherToday.min_temp)}`;
         });
+    })
+    .catch(err => {
+      console.log(err);
+      data.innerHTML = "Request failed!";
     });
 }
 
